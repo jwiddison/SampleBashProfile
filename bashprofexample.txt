@@ -1,0 +1,32 @@
+#### Permanent Aliases ####
+alias ls="ls -Fal"
+alias python="python3"
+alias pip="pip3"
+alias work="cd /Users/jordan/Documents/Work/"
+alias skedgit="cd /Users/jordan/Documents/Work/skedgit/skedgit/"
+alias extension="cd /Users/jordan/Documents/Work/skedgit/skedgit-chrome-extension/"
+alias learning="cd /Users/jordan/Documents/Work/Learning_Day/"
+alias otherprojects="cd /Users/jordan/Documents/Work/Other\ Projects/"
+alias ativeo="cd /Users/jordan/Documents/Work/Other\ Projects/ativeo/ativeo-api/"
+alias theonemillion="cd /Users/jordan/Documents/Work/the-one-million/"
+alias school="cd /Users/jordan/Documents/School/"
+alias up="cd .."
+alias bashprof="nano ~/.bash_profile"
+alias reloadbash="source ~/.bash_profile"
+alias dbfullreset="rake db:drop db:create db:migrate db:seed"
+
+# Git Branch in Prompt
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="user: \u \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\n$ "
+
+# To get user@host add \u@\h to the beginning of export PS1="...
+
+# Make rbenv work
+eval "$(rbenv init -)"
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
