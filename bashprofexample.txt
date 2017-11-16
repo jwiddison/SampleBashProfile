@@ -1,19 +1,37 @@
 #### Permanent Aliases ####
+
+## System-wide
 alias ls="ls -Fal"
-alias python="python3"
-alias pip="pip3"
-alias work="cd ~/Documents/Work/"
 alias up="cd .."
 alias bashprof="nano ~/.bash_profile"
 alias reloadbash="source ~/.bash_profile"
-alias dbfullreset="rake db:drop db:create db:migrate db:seed"
+alias getcurrentip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias gitlog="git log --oneline --graph --decorate --all"
+
+## Rails
+alias rs="rails s"
+alias rsb="rails s -b 0.0.0.0"
+alias dbfullreset="bundle exec rake db:drop db:create db:migrate db:seed"
+alias jobworker="bundle exec rake jobs:work"
+
+## Python
+alias python="python3"
+alias pip="pip3"
+
+## Shortcuts / Directories
+alias work="cd ~/Documents/Work/"
+alias school="cd ~/Documents/School/"
+## Include other specific shortcuts here.
+
+### Other Config Stuff ###
 
 # Git Branch in Prompt
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1="user: \u \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\n$ "
-## To get user@host add \u@\h to the beginning of export PS1="...
+
+# To get user@host add \u@\h to the beginning of export PS1="...
 
 # Make rbenv work
 eval "$(rbenv init -)"
@@ -22,3 +40,4 @@ eval "$(rbenv init -)"
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
+
