@@ -3,29 +3,52 @@
 ## System-wide
 alias ls="ls -Fal"
 alias up="cd .."
+alias desktop="cd ~/Desktop/"
 alias bashprof="nano ~/.bash_profile"
 alias reloadbash="source ~/.bash_profile"
 alias getcurrentip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias gitlog="git log --oneline --graph --decorate --all"
+alias gs="git status"
 
 ## Rails
 alias rs="rails s"
 alias rsb="rails s -b 0.0.0.0"
-alias dbfullreset="bundle exec rake db:drop db:create db:migrate db:seed"
+alias rsp="rails s -p 3001"
+alias rsp2="rails s -p 3002"
+alias migrate="bundle exec rake db:migrate"
+alias dbfullreset="bundle exec rake db:drop db:create db:migrate db:fixtures:load db:seed"
 alias jobworker="bundle exec rake jobs:work"
 
 ## Python
 alias python="python3"
 alias pip="pip3"
 
+## JavaScript
+alias listnpm="ls `npm root -g`"
+
 ## Shortcuts / Directories
 alias work="cd ~/Documents/Work/"
+alias ios="cd ~/Documents/Work/Swift"
+alias skedgit="cd ~/Documents/Work/skedgit/skedgit/"
+alias dyt="cd ~/Documents/Work/DressingYourTruth/dressing-your-truth/"
+alias otherprojects="cd ~/Documents/Work/Jarvis/Other\ Projects/"
+alias kirus="cd ~/Documents/Work/Kirus"
+alias kirus-frontend="cd ~/Documents/Work/Kirus/kirus-frontend/"
+alias kirus-api="cd ~/Documents/Work/Kirus/kirus-api/"
+alias kirus-admin="cd ~/Documents/Work/Kirus/kirus-admin/"
+alias kirus-gem="cd ~/Documents/Work/Kirus/kirus-gem/"
+alias olumo="cd ~/Documents/Work/olumo/olumo/"
+alias darrio-api="cd ~/Documents/Work/darrio/darrio-api/"
+alias darrio-ui="cd ~/Documents/Work/darrio/darrio-ui/"
+alias theonemillion="cd ~/Documents/Work/the-one-million/"
 alias school="cd ~/Documents/School/"
-## Include other specific shortcuts here.
+alias react="cd ~/Documents/School/0-Winter-2018/react/react-sample-projects/"
+alias resumeWebsite="cd ~/Documents/Misc/Personal-Resume-Website/"
+alias byudomainsssh="ssh jordanwi@jordanwiddison.com"
 
 ### Other Config Stuff ###
 
-# Git Branch in Prompt
+## Git Branch in Prompt
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -33,11 +56,13 @@ export PS1="user: \u \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\
 
 # To get user@host add \u@\h to the beginning of export PS1="...
 
-# Make rbenv work
+## Make rbenv work
 eval "$(rbenv init -)"
 
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
+## Git Autocompletion
+source ~/git-completion.bash
+
+## Setting PATH for Python 3.6
+## The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
-
