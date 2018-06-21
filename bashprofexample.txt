@@ -46,22 +46,19 @@ alias olumo="cd ~/Documents/side_projects/olumo/"
 ### Other Config Stuff ###
 ##########################
 
-## Make RBENV work ##
-eval "$(rbenv init -)"
-
-## Git Branch in Prompt ##
+# Git Branch in Prompt ##
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1="user: \u \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\n$ "
-# To get user@host add \u@\h to the beginning of export PS1="...
+# export PS1="user: \u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\n$ " #ADDS USER@HOST
 
-## Make rbenv work ##
-eval "$(rbenv init -)"
-
-## Git Autocompletion
+## Git Autocompletion ##
 test -f ~/.git-completion.bash && . $_
 
-## Make n work
+## Make RBENV Work ##
+eval "$(rbenv init -)"
+
+## Make N Work ##
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 # Added by n-install (see http://git.io/n-install-repo).
