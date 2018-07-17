@@ -38,11 +38,6 @@ alias bsl="brew services list"
 alias startpg="brew services start postgres"
 alias stoppg="brew services stop postgres"
 
-## Other Projects
-alias burgerblog="cd ~/Documents/side_projects/burgerblog/"
-alias darrio="cd ~/Documents/side_projects/darrio/darrio-rails/"
-alias olumo="cd ~/Documents/side_projects/olumo/"
-
 ##########################
 ### Other Config Stuff ###
 ##########################
