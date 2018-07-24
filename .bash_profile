@@ -3,12 +3,16 @@
 ###############
 
 ## System-wide ##
-alias bashprof="nano ~/.bash_profile"
+alias bashprof="atom ~/.bash_profile"
 alias desktop="cd ~/Desktop/"
+alias documents="cd ~/Documents/"
+alias downloads="cd ~/Downloads/"
 alias getcurrentip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias gitlog="git log --oneline --graph --decorate --all"
 alias gs="git status"
 alias ls="ls -Fal"
+alias pr="dopen p"
+alias prodconsole="convox run console 'bin/safe-console' -a review-rocket-prod --rack production"
 alias reloadbash="source ~/.bash_profile"
 alias up="cd .."
 
