@@ -1,3 +1,3 @@
-## Bash Profile
+# Bash Profile
 
-Just backing up my bash profile to make it easier to move from computer to computer
+This is collection of bash aliases, etc I've found useful. Can just be added to your `~/.bash_profile`
