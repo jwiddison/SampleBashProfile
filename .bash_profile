@@ -61,6 +61,35 @@ test -f ~/.git-completion.bash && . $_
 ## Make RBENV Work ##
 eval "$(rbenv init -)"
 
-## Make N Work ##
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
-# Added by n-install (see http://git.io/n-install-repo).
+## IF YOU'RE USING N TO MANAGE NODE VERSIONS, USE THE FOLLOWING:
+# ## Make N Work ##
+# export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+# # Added by n-install (see http://git.io/n-install-repo).
+
+## IF YOU'RE USING NVM TO MANAGE NODE VERSIONS, USE THE FOLLOWING:
+# ## Make NVM work ##
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# #
+# # Run 'nvm use' automatically every time there's
+# # a .nvmrc file in the directory. Also, revert to default
+# # version when entering a directory without .nvmrc
+# #
+# enter_directory() {
+# if [[ $PWD == $PREV_PWD ]]; then
+#     return
+# fi
+#
+# PREV_PWD=$PWD
+# if [[ -f ".nvmrc" ]]; then
+#     nvm use
+#     NVM_DIRTY=true
+# elif [[ $NVM_DIRTY = true ]]; then
+#     nvm use default
+#     NVM_DIRTY=false
+# fi
+# }
+#
+# export PROMPT_COMMAND=enter_directory
+#
